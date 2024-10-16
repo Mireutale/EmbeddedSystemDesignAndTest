@@ -27,15 +27,18 @@ STM32 board GPIO control
 4. 프로젝트 오른쪽 클릭 - Options
 >General Options – Target 탭 – Device
 >>•ST – STM32F1 – STM32F107 – ST STM32F107VC
+
 >General Options – Library Configuration 탭
->>• Library - Normal 
+>>• Library - Normal  
 >>• CMSIS - Use CMSIS
+
 >Runtime Checking – C/C++ Compiler
->>• List 탭
->>• Output list file
->>>• Assembler mnemonics
->>>• Diagnostics
->>• Preprocessor 탭
+>>• List 탭  
+>>• Output list file  
+>>>• Assembler mnemonics  
+>>>• Diagnostics  
+
+>>• Preprocessor 탭  
 >>>• Additional include directories: (one per line)
 >>>>$PROJ_DIR$\libraries\CMSIS\DeviceSupport
 >>>>$PROJ_DIR$\libraries\CMSIS\DeviceSupport\Startup
