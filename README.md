@@ -45,6 +45,7 @@ STM32 board GPIO control
 >>>'$PROJ\_DIR\$\libraries\STM32F10x_StdPeriph_Driver_v3.5\src'  
 >>>'$PROJ\_DIR\$\user'  
 >>>'$PROJ\_DIR\$\user\inc'
+
 >>• Defined symbols: (one per line)  
 >>>USE_STDPERIPH_DRIVER  
 >>>STM32F10X_CL
