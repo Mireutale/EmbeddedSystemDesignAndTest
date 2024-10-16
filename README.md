@@ -40,7 +40,7 @@ STM32 board GPIO control
 
 >>• Preprocessor 탭  
 >>>• Additional include directories: (one per line)
->>>>'$PROJ\_DIR\$\libraries\CMSIS\DeviceSupport'  
+>>>>'$PROJ_DIR\$\libraries\CMSIS\DeviceSupport'  
 >>>>\$PROJ\_DIR\$\libraries\CMSIS\DeviceSupport\Startup  
 >>>>\$PROJ\_DIR\$\libraries\STM32F10x_StdPeriph_Driver_v3.5\inc  
 >>>>\$PROJ\_DIR\$\libraries\STM32F10x_StdPeriph_Driver_v3.5\src  
