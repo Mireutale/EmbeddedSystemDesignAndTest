@@ -25,46 +25,46 @@ STM32 board GPIO control
 
 4. 프로젝트 오른쪽 클릭 - Options
 >General Options – Target 탭 – Device
-    >>•ST – STM32F1 – STM32F107 – ST STM32F107VC
+>>•ST – STM32F1 – STM32F107 – ST STM32F107VC
 >General Options – Library Configuration 탭
-    >>• Library - Normal 
-    >>• CMSIS - Use CMSIS
+>>• Library - Normal 
+>>• CMSIS - Use CMSIS
 >Runtime Checking – C/C++ Compiler
-    >>• List 탭
-    >>• Output list file
-        >>>• Assembler mnemonics
-        >>>• Diagnostics
-    >>• Preprocessor 탭
-        >>>• Additional include directories: (one per line)
-            >>>>$PROJ_DIR$\libraries\CMSIS\DeviceSupport
-            >>>>$PROJ_DIR$\libraries\CMSIS\DeviceSupport\Startup
-            >>>>$PROJ_DIR$\libraries\STM32F10x_StdPeriph_Driver_v3.5\inc
-            >>>>$PROJ_DIR$\libraries\STM32F10x_StdPeriph_Driver_v3.5\src
-            >>>>$PROJ_DIR$\user
-            >>>>$PROJ_DIR$\user\inc
-        >>>• Defined symbols: (one per line)
-            >>>>USE_STDPERIPH_DRIVER
-            >>>>STM32F10X_CL
+>>• List 탭
+>>• Output list file
+>>>• Assembler mnemonics
+>>>• Diagnostics
+>>• Preprocessor 탭
+>>>• Additional include directories: (one per line)
+>>>>$PROJ_DIR$\libraries\CMSIS\DeviceSupport
+>>>>$PROJ_DIR$\libraries\CMSIS\DeviceSupport\Startup
+>>>>$PROJ_DIR$\libraries\STM32F10x_StdPeriph_Driver_v3.5\inc
+>>>>$PROJ_DIR$\libraries\STM32F10x_StdPeriph_Driver_v3.5\src
+>>>>$PROJ_DIR$\user
+>>>>$PROJ_DIR$\user\inc
+>>>• Defined symbols: (one per line)
+>>>>USE_STDPERIPH_DRIVER
+>>>>STM32F10X_CL
 >Runtime Checking – Output Converter
-    >>• Generate additional output
-        >>>• Output format – Raw binary
+>>• Generate additional output
+>>>• Output format – Raw binary
 >Runtime Checking – Linker – List 탭
-    >>• 모두 체크
+>>• 모두 체크
 >user/main.c에 원하는 코드 작성
-    >>• F7 (Make) 로 컴파일
-    >>• 첫 컴파일 시 저장하는 창이 뜸
-    >>• project_test/ 폴더에 프로젝트 명으로 저장  
+>>• F7 (Make) 로 컴파일
+>>• 첫 컴파일 시 저장하는 창이 뜸
+>>• project_test/ 폴더에 프로젝트 명으로 저장  
 
-5. 보드에 포팅
+5. 보드에 포팅  
 >options - Runtime checking – Debugger – Setup 탭
-    >>• Driver – J-link/J-Trace
+>>• Driver – J-link/J-Trace
 >options - Runtime checking – Debugger – Download
-    >>• Verify download
-    >>• Use flash loader(s)
+>>• Verify download
+>>• Use flash loader(s)
 >Download and Debug
-    >>• 동의 묻는 창 뜨면 Accept
-    >>• 보드 flash에 프로그램 다운로드 하면서 디버깅 모드로 들어감
+>>• 동의 묻는 창 뜨면 Accept
+>>• 보드 flash에 프로그램 다운로드 하면서 디버깅 모드로 들어감
 >Stop Debugging
-    >>• 디버깅 모드에서 나오기
-    >>• 보드 전원 껐다 켜기
-    >>• 원하는 대로 동작하는지 확인
+>>• 디버깅 모드에서 나오기
+>>• 보드 전원 껐다 켜기
+>>• 원하는 대로 동작하는지 확인
