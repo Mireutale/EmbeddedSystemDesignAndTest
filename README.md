@@ -65,12 +65,15 @@ STM32 board GPIO control
 5. 보드에 포팅  
 >options - Runtime checking – Debugger – Setup 탭
 >>• Driver – J-link/J-Trace
+
 >options - Runtime checking – Debugger – Download
 >>• Verify download
 >>• Use flash loader(s)
+
 >Download and Debug
 >>• 동의 묻는 창 뜨면 Accept
 >>• 보드 flash에 프로그램 다운로드 하면서 디버깅 모드로 들어감
+
 >Stop Debugging
 >>• 디버깅 모드에서 나오기
 >>• 보드 전원 껐다 켜기
