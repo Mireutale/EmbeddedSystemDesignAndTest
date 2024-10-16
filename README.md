@@ -33,23 +33,21 @@ STM32 board GPIO control
 >>• CMSIS - Use CMSIS
 
 >Runtime Checking – C/C++ Compiler
->>• List 탭  
->>• Output list file  
+>>• List 탭 - Output list file  
 >>>• Assembler mnemonics  
 >>>• Diagnostics  
 
->>• Preprocessor 탭  
->>>• Additional include directories: (one per line)
->>>>'$PROJ_DIR\$\libraries\CMSIS\DeviceSupport'  
->>>>'$PROJ\_DIR\$\libraries\CMSIS\DeviceSupport\Startup'
->>>>'$PROJ\_DIR\$\libraries\STM32F10x_StdPeriph_Driver_v3.5\inc'
->>>>'$PROJ\_DIR\$\libraries\STM32F10x_StdPeriph_Driver_v3.5\src'  
->>>>'$PROJ\_DIR\$\user'  
->>>>'$PROJ\_DIR\$\user\inc'
-
->>>• Defined symbols: (one per line)  
->>>>USE_STDPERIPH_DRIVER  
->>>>STM32F10X_CL
+>• Preprocessor 탭  
+>>• Additional include directories: (one per line)
+>>>'$PROJ_DIR\$\libraries\CMSIS\DeviceSupport'  
+>>>'$PROJ\_DIR\$\libraries\CMSIS\DeviceSupport\Startup'
+>>>'$PROJ\_DIR\$\libraries\STM32F10x_StdPeriph_Driver_v3.5\inc'
+>>>'$PROJ\_DIR\$\libraries\STM32F10x_StdPeriph_Driver_v3.5\src'  
+>>>'$PROJ\_DIR\$\user'  
+>>>'$PROJ\_DIR\$\user\inc'
+>>• Defined symbols: (one per line)  
+>>>USE_STDPERIPH_DRIVER  
+>>>STM32F10X_CL
 
 >Runtime Checking – Output Converter
 >>• Generate additional output  
