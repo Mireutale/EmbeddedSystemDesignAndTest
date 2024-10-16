@@ -19,7 +19,8 @@ STM32 board GPIO control
 >project_test 폴더의 구조와 같이 만들기
 >>• 필수는 아니지만 보기 좋게 하기 위함  
 >>• 하나하나 추가해야 함  
->>• 프로젝트 오른쪽 클릭 – Add – Add  
+>>• 프로젝트 오른쪽 클릭 – Add – Add
+
 >Files으로 .c, .h, .s 파일 모두 추가  
 >>• 이건 필수  
 
