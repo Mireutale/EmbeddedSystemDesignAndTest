@@ -39,24 +39,28 @@ STM32 board GPIO control
 >>>• Diagnostics  
 
 >>• Preprocessor 탭  
->>>• Additional include directories: (one per line)
->>>>$PROJ_DIR$\libraries\CMSIS\DeviceSupport
->>>>$PROJ_DIR$\libraries\CMSIS\DeviceSupport\Startup
->>>>$PROJ_DIR$\libraries\STM32F10x_StdPeriph_Driver_v3.5\inc
->>>>$PROJ_DIR$\libraries\STM32F10x_StdPeriph_Driver_v3.5\src
->>>>$PROJ_DIR$\user
+>>>• Additional include directories: (one per line)  
+>>>>$PROJ_DIR$\libraries\CMSIS\DeviceSupport  
+>>>>$PROJ_DIR$\libraries\CMSIS\DeviceSupport\Startup  
+>>>>$PROJ_DIR$\libraries\STM32F10x_StdPeriph_Driver_v3.5\inc  
+>>>>$PROJ_DIR$\libraries\STM32F10x_StdPeriph_Driver_v3.5\src  
+>>>>$PROJ_DIR$\user  
 >>>>$PROJ_DIR$\user\inc
->>>• Defined symbols: (one per line)
->>>>USE_STDPERIPH_DRIVER
+
+>>>• Defined symbols: (one per line)  
+>>>>USE_STDPERIPH_DRIVER  
 >>>>STM32F10X_CL
+
 >Runtime Checking – Output Converter
->>• Generate additional output
+>>• Generate additional output  
 >>>• Output format – Raw binary
->Runtime Checking – Linker – List 탭
+
+>Runtime Checking – Linker – List 탭  
 >>• 모두 체크
+
 >user/main.c에 원하는 코드 작성
->>• F7 (Make) 로 컴파일
->>• 첫 컴파일 시 저장하는 창이 뜸
+>>• F7 (Make) 로 컴파일  
+>>• 첫 컴파일 시 저장하는 창이 뜸  
 >>• project_test/ 폴더에 프로젝트 명으로 저장  
 
 5. 보드에 포팅  
