@@ -43,7 +43,7 @@ void RCC_Configure(void)
 
 void GPIO_Configure(void)
 {
-    //±¸Á¶Ã¼¼±¾ğ, GPIOÇÉ ¼³Á¤
+    //êµ¬ì¡°ì²´ì„ ì–¸, GPIOí•€ ì„¤ì •
     GPIO_InitTypeDef GPIO_InitStructure;
 
     // TODO: Initialize the GPIO pins using the structure 'GPIO_InitTypeDef' and the function 'GPIO_Init'
@@ -78,7 +78,7 @@ void GPIO_Configure(void)
 	
 }
 
-//stm32f10x_exti.c ÂüÁ¶
+//stm32f10x_exti.c ì°¸ì¡°
 
 void EXTI_Configure(void)
 {
@@ -111,7 +111,7 @@ void EXTI_Configure(void)
     // NOTE: do not select the UART GPIO pin used as EXTI Line here
 }
 
-//stm32f10x_usart.c ÂüÁ¶
+//stm32f10x_usart.c ì°¸ì¡°
 
 void USART1_Init(void)
 {
@@ -127,7 +127,7 @@ void USART1_Init(void)
         USART1_InitStructure.USART_Parity =USART_Parity_No;
         USART1_InitStructure.USART_Mode = USART_Mode_Rx | USART_Mode_Tx;
         USART1_InitStructure.USART_HardwareFlowControl = USART_HardwareFlowControl_None;
-        // 9ÁÖÂ÷ ½½¶óÀÌµå 24p
+        // 9ì£¼ì°¨ ìŠ¬ë¼ì´ë“œ 24p
         USART_Init(USART1, &USART1_InitStructure);
 	
 	// TODO: Enable the USART1 RX interrupts using the function 'USART_ITConfig' and the argument value 'Receive Data register not empty interrupt'
@@ -135,14 +135,14 @@ void USART1_Init(void)
 	USART_ITConfig(USART1, USART_IT_RXNE, ENABLE);
 }
 
-//misc.c ÂüÁ¶
+//misc.c ì°¸ì¡°
 
 void NVIC_Configure(void) {
 
     NVIC_InitTypeDef NVIC_InitStructure;
     
     // TODO: fill the arg you want
-    //misc.cÀÇ 'NVIC_PriorityGroupConfig' ÇÔ¼ö¸¦ »ç¿ëÇÏ¿© ¿ì¼±¼øÀ§ ±×·ì ¼³Á¤
+    //misc.cì˜ 'NVIC_PriorityGroupConfig' í•¨ìˆ˜ë¥¼ ì‚¬ìš©í•˜ì—¬ ìš°ì„ ìˆœìœ„ ê·¸ë£¹ ì„¤ì •
     NVIC_PriorityGroupConfig(NVIC_PriorityGroup_2);
 
     // TODO: Initialize the NVIC using the structure 'NVIC_InitTypeDef' and the function 'NVIC_Init'
@@ -239,8 +239,8 @@ void sendDataUART1(uint16_t data) {
 	USART_SendData(USART1, data);
 }
 
-//stm32f10x_gpio.c¿¡¼­ 'GPIO_SetBits' ÇÔ¼ö Á¤ÀÇ ÀÏºÎ ÂüÁ¶
-//stm32f10x_gpio.c¿¡¼­ 'GPIO_ResetBits' ÇÔ¼ö Á¤ÀÇ ÀÏºÎ ÂüÁ¶
+//stm32f10x_gpio.cì—ì„œ 'GPIO_SetBits' í•¨ìˆ˜ ì •ì˜ ì¼ë¶€ ì°¸ì¡°
+//stm32f10x_gpio.cì—ì„œ 'GPIO_ResetBits' í•¨ìˆ˜ ì •ì˜ ì¼ë¶€ ì°¸ì¡°
 
 int main(void)
 {
