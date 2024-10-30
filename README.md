@@ -1,9 +1,8 @@
 # Use Software  
 [IAR Imbedded Workbench for Arm](https://www.iar.com/ko/products/architectures/arm/iar-embedded-workbench-for-arm/iar-embedded-workbench-for-arm-free-trial-version)  
 # Use Hardware  
-STM32 board GPIO control
+STM32 board GPIO control  
 
----
 ## 환경 설정
 프로젝트 생성 및 설정
 1. 원하는 경로에 원하는 이름으로 폴더 생성 (ex: project_test)
