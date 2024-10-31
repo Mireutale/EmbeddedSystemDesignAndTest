@@ -127,7 +127,6 @@ void USART1_Init(void)
         USART1_InitStructure.USART_Parity =USART_Parity_No;
         USART1_InitStructure.USART_Mode = USART_Mode_Rx | USART_Mode_Tx;
         USART1_InitStructure.USART_HardwareFlowControl = USART_HardwareFlowControl_None;
-        // 9주차 슬라이드 24p
         USART_Init(USART1, &USART1_InitStructure);
 	
 	// TODO: Enable the USART1 RX interrupts using the function 'USART_ITConfig' and the argument value 'Receive Data register not empty interrupt'
