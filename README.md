@@ -80,5 +80,5 @@ STM32 board GPIO control
 
 ## 실행방법
 - datafile내부의 pdf를 제외한 파일을 모두 IAR 프로그램에 환경 설정 방법대로 입력  
-이후 week_.c 파일을 user/main.c에 코드를 넣어서 수행  
-자세한 내용은 보고서 pdf를 확인
+- 이후 week_.c 파일을 user/main.c에 코드를 넣어서 수행  
+- 자세한 내용은 보고서 pdf를 확인
