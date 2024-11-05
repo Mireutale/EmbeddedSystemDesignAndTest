@@ -52,7 +52,7 @@ void SetSysClock(void) {
         FLASH->ACR &= (uint32_t)((uint32_t)~FLASH_ACR_LATENCY);
         FLASH->ACR |= (uint32_t)FLASH_ACR_LATENCY_0;
 
-//@TODO - 1 Set the clock, (//) ÁÖ¼® Ç¥½Ã¸¦ ¾ø¾Ö°í Æ²¸° °ªÀÌ ÀÖ´Ù¸é Á¦´ë·Î µÈ °ªÀ¸·Î ¼öÁ¤ÇÏ½Ã¿À 
+//@TODO - 1 Set the clock, (//) ì£¼ì„ í‘œì‹œë¥¼ ì—†ì• ê³  í‹€ë¦° ê°’ì´ ìžˆë‹¤ë©´ ì œëŒ€ë¡œ ëœ ê°’ìœ¼ë¡œ ìˆ˜ì •í•˜ì‹œì˜¤ 
         /* HCLK = SYSCLK */
         RCC->CFGR |= (uint32_t)RCC_CFGR_HPRE_DIV1;
         /* PCLK2 = HCLK / 2, use PPRE2 */
