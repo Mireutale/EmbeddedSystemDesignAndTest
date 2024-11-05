@@ -78,6 +78,5 @@ STM32 board GPIO control
 >>• 보드 전원 껐다 켜기
 >>• 원하는 대로 동작하는지 확인
 
----
 ## 실행방법
 week_.c 파일을 user/main.c에 코드를 넣어서 수행
