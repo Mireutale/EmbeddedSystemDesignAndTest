@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 # Use Software  
 [IAR Imbedded Workbench for Arm](https://www.iar.com/ko/products/architectures/arm/iar-embedded-workbench-for-arm/iar-embedded-workbench-for-arm-free-trial-version)  
 # Use Hardware  
@@ -22,6 +23,32 @@ STM32 board GPIO control
 
 >Files으로 .c, .h, .s 파일 모두 추가  
 >>• 이건 필수  
+=======
+Software  
+Use [IAR Imbedded Workbench for Arm](https://www.iar.com/ko/products/architectures/arm/iar-embedded-workbench-for-arm/iar-embedded-workbench-for-arm-free-trial-version)  
+Hardware  
+STM32 board GPIO control  
+
+---
+환경 설정  
+프로젝트 생성 및 설정  
+1. 원하는 경로에 원하는 이름으로 폴더 생성 (ex: project_test)  
+    • 단, 한글경로는 포함되지 않도록 유의  
+    • project_test/ 폴더에 실험 제공 파일 (CoreSupport, libraries, user 등) 복사  
+
+2. IAR Embedded Workbench IDE 실행  
+    • Project – Create New Project
+    • Empty project – OK
+    • 생성한 project_test 폴더에 원하는 프로젝트 명 (ex: test) 으로 저장  
+
+3. 프로젝트 오른쪽 클릭 – Add – Add Group으로  
+    project_test 폴더의 구조와 같이 만들기
+        • 필수는 아니지만 보기 좋게 하기 위함
+        • 하나하나 추가해야 함
+        • 프로젝트 오른쪽 클릭 – Add – Add
+    Files으로 .c, .h, .s 파일 모두 추가
+        • 이건 필수  
+>>>>>>> Stashed changes
 
 4. 프로젝트 오른쪽 클릭 - Options
 >General Options – Target 탭 – Device
