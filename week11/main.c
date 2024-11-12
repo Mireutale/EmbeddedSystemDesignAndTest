@@ -107,20 +107,16 @@ void RccInit(void) {
 // TODO
 void GpioInit(void) {
   GPIO_InitTypeDef GPIO_InitStructure;
-  uint16_t prescale = 0;
-  // LED setup
-
-  // PWM motor setup
-
-  // Timer setup
 
   // LED setup on GPIOD Pin 2 and Pin 3
+  // LED 1, 2번 설정
   GPIO_InitStructure.GPIO_Pin = GPIO_Pin_2 | GPIO_Pin_3;
   GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP;
   GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
   GPIO_Init(GPIOD, &GPIO_InitStructure);
 
   // PWM motor setup on GPIOB Pin 0
+  // PWM으로 서브 모터 제어 신호 출력 설정
   GPIO_InitStructure.GPIO_Pin = GPIO_Pin_0;
   GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF_PP;
   GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
@@ -129,27 +125,56 @@ void GpioInit(void) {
 
 // TODO
 void TIM_Configure(void) {
+  // TIM2 Configuration
+  TIM_TimeBaseInitTypeDef TIM_TimeBaseStructure;
+  // 0부터 10000까지 count
+  // 0부터 세기 때문에, -1을 해줘야 함.
+  TIM_TimeBaseStructure.TIM_Period = 10000-1; 
+  // prescaler 7200 -> 1초마다 이벤트 발생
+  // 시스템의 기본 클락 72Mhz -> prescaler = 7200, period = 10000
+  // 7200 = 72Mhz / 10000
+  // 그냥 7200 - 1을 사용해도 무방
+  TIM_TimeBaseStructure.TIM_Prescaler = (uint16_t) (SystemCoreClock / 10000)-1; 
+  // clock 분할 x
+  TIM_TimeBaseStructure.TIM_ClockDivision = 0;
+  TIM_TimeBaseStructure.TIM_CounterMode = TIM_CounterMode_Up;
+  // 카운트 업 모드, 0부터 period값 까지 증가
+  TIM_TimeBaseInit(TIM2, &TIM_TimeBaseStructure);
+  // TIM2 위 설정으로 초기화
+  TIM_ARRPreloadConfig(TIM2, ENABLE);
+  // 타이머가 Period에 도달할 때 마다 초기화
+  TIM_ITConfig(TIM2, TIM_IT_Update, ENABLE);
+  // 활성화
+  TIM_Cmd(TIM2, ENABLE);
+
+  // TIM3 Configuration
   TIM_TimeBaseInitTypeDef TIM_TimeBaseStructure;
   TIM_OCInitTypeDef TIM_OCInitStructure;
 
-  // Configure TIM2 for periodic interrupts
-  TIM_TimeBaseStructure.TIM_Period = 10000 - 1;
-  TIM_TimeBaseStructure.TIM_Prescaler = 7200 - 1;
-  TIM_TimeBaseStructure.TIM_ClockDivision = TIM_CKD_DIV1;
-  TIM_TimeBaseStructure.TIM_CounterMode = TIM_CounterMode_Up;
-  TIM_TimeBaseInit(TIM2, &TIM_TimeBaseStructure);
-  TIM_ITConfig(TIM2, TIM_IT_Update, ENABLE);
-  TIM_Cmd(TIM2, ENABLE);
+  // Enable the peripheral clock for TIM3
+  RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM3, ENABLE);
 
-  // Configure TIM3 for PWM output on motor control
-  TIM_TimeBaseStructure.TIM_Period = 20000 - 1;
+  // Configure the time base
+  // 20,000개 카운터
+  // 서브 모터는 50Hz(20ms)를 필요로 함.
+  TIM_TimeBaseStructure.TIM_Period = 20000 - 1; 
+  // 시스템의 기본 클락을 72MHz라고 설정.
+  // 20ms가 되어야 하므로, prescaler이 72이면 1MHz/20,000 -> 50Hz가 성립
   TIM_TimeBaseStructure.TIM_Prescaler = 72 - 1;
+  TIM_TimeBaseStructure.TIM_ClockDivision = 0;
+  // 카운트 다운 모드
+  TIM_TimeBaseStructure.TIM_CounterMode = TIM_CounterMode_Down;
+  //타이머 초기화
   TIM_TimeBaseInit(TIM3, &TIM_TimeBaseStructure);
 
+  // Configure TIM3 Channel 3 as PWM output
+  // 타이머의 카운트 값이 TIM_Pulse보다 작으면 신호 활성, 크면 비활성
   TIM_OCInitStructure.TIM_OCMode = TIM_OCMode_PWM1;
-  TIM_OCInitStructure.TIM_OCPolarity = TIM_OCPolarity_High;
   TIM_OCInitStructure.TIM_OutputState = TIM_OutputState_Enable;
-  TIM_OCInitStructure.TIM_Pulse = motorAngle;
+  // Example: 1ms pulse width, adjustable as needed
+  TIM_OCInitStructure.TIM_Pulse = 0; 
+  // PMW신호 활성시 전압 HIGH로 출력
+  TIM_OCInitStructure.TIM_OCPolarity = TIM_OCPolarity_High;
   TIM_OC3Init(TIM3, &TIM_OCInitStructure);
 
   TIM_Cmd(TIM3, ENABLE);
