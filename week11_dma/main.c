@@ -14,7 +14,7 @@ uint32_t light;
 int color[12] = {WHITE,CYAN,BLUE,RED,MAGENTA,LGRAY,GREEN,YELLOW,BROWN,BRRED,GRAY};
 uint16_t value = 0;
 volatile uint32_t ADC_Value[1];
-uint32_t THRESHOLD = 3800;
+uint32_t THRESHOLD = 3750;
 
 void RCC_Configure(void)
 {
